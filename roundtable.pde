@@ -1,11 +1,19 @@
+/*
+ * roundtable.pde
+ * Brian Yu
+ * Crimson Roundtable
+ *
+ * Roundtable semicircular feature design
+ *
+ */
+
 void setup() {
 }
 
 void draw() {
-    var width = window.innerWidth;
-    var height = window.innerHeight;
-    size(width, height);
-    background(100);
-    stroke(255);
-    ellipse(width/2, height/2, 25, 25);
+    size(window.innerWidth, window.innerHeight);
+    background(background_color);
+    stroke(255, 255, 255);
+    radius = base_radius + 2 * sin(frameCount / 8);
+    ellipse(width/2, height/2, radius, radius);
 }
