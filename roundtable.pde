@@ -197,4 +197,3 @@ void showDetail() {
         imgHeight, 1);
 
 }
-
