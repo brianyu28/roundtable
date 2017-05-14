@@ -20,6 +20,8 @@ color white = color(255, 255, 255);
 
 // fonts
 PFont labelFont = createFont("fonts/Merriweather-Regular.ttf", 12);
+PFont headlineFont = createFont("fonts/Merriweather-Regular.ttf", 36);
+PFont descriptionFont = createFont("fonts/Merriweather-Regular.ttf", 16);
 
 // color assignments
 color bgColor = crimson;
@@ -28,7 +30,11 @@ color bgColor = crimson;
 int maxWidth = 1000;
 int mobileThreshold = 450;
 float aspectRatio = 5/3;
+float semicircleStart = 1/2; // semicircle starts 1/2 way down view
 
 int horizontalLabelPadding = 15;
 int verticalLabelPadding = 10;
 int glowSize = 40;
+
+int detailHeadPadding = 30;
+int detailHeadHeight = 90;

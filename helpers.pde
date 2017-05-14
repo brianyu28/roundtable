@@ -16,7 +16,7 @@ float[] semicircleCoords(float width, float height, float proportion) {
     
     // leftmost and rightmost points along semicircle
     float leftmostX = circleSize;
-    float leftmostY = (1/2) * height;
+    float leftmostY = semicircleStart * height;
     float rightmostX = width - circleSize;
     
     // angle and distance from origin to leftmost and rightmost angles
@@ -32,4 +32,13 @@ float[] semicircleCoords(float width, float height, float proportion) {
     float y = originY - semicircleRadius * sin(desiredAngle);
     
     return [x, y];
+}
+
+var boundBy(x, lower, upper) {
+    if (x < lower)
+        return lower;
+    else if (x > upper)
+        return upper;
+    else
+        return x;
 }
