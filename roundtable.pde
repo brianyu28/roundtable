@@ -9,28 +9,47 @@
 
 int viewWidth = 0;
 int viewHeight = 0;
-int circleSize = 80;
+int circleSize;
+int maxRadius;
+int selectedIndex = -1;
 
 int numPoints;
+
+int[] centers_x;
+int[] centers_y;
 
 PImage[] images;
 
 void setup() {
+    updateSize();
     numPoints = data.length;
+    centers_x = new int[numPoints];
+    centers_y = new int[numPoints];
 
     // load images for points
     images = new PImage[numPoints];
     for (int i = 0; i < numPoints; i++) {
         images[i] = loadImage("img/" + data[i]["image"]);
     }
+
+    // determine locations for points
+    circleSize = min(80, viewWidth / (numPoints + 3));
+    maxRadius = circleSize + 1;
+    for (int i = 0; i < numPoints; i++) {
+        float proportion = i / (numPoints - 1);
+        float[] coords = semicircleCoords(viewWidth, viewHeight, proportion);
+        centers_x[i] = coords[0];
+        centers_y[i] = coords[1];
+    }
 }
 
-void draw() {
-    // get current width and height
+void updateSize() {
     int curWidth = min(window.innerWidth, maxWidth);
     viewWidth = curWidth;
     viewHeight = viewWidth / aspectRatio;
-    
+}
+
+void draw() {
     // determine whether to render as desktop or mobile
     if (viewWidth <= mobileThreshold)
         renderMobile();
@@ -43,15 +62,10 @@ void renderDesktop() {
     background(bgColor);
     stroke(255, 255, 255);
 
-    circleSize = min(80, viewWidth / (numPoints + 3));
 
     for (int i = 0; i < numPoints; i++) {
         float radius = circleSize + sin((frameCount + 2 * i) / 8);
-        float maxRadius = circleSize + 1;
-        var item = data[i];
-        float proportion = i / (numPoints - 1);
-        float[] coords = semicircleCoords(viewWidth, viewHeight, proportion);
-        drawPoint(coords, radius, maxRadius, i);
+        drawPoint(i, radius);
     }
 }
 
@@ -60,16 +74,40 @@ void renderMobile() {
     background(bgColor);
 }
 
-void drawPoint(float[] coords, float radius, float maxRadius, int i) {
+void drawPoint(int i, float radius) {
+    
+    int additionalVerticalPadding = 0;
 
+    // show glow
+    if (i == selectedIndex) {
+        float glowRadius = radius + glowSize;
+        fill(yellow, 0);
+        for (int j = 0; j < glowRadius; j++) {
+            stroke(yellow, 255.0 * (1 - j / glowRadius));
+            ellipse(centers_x[i], centers_y[i], j, j);
+        }
+        additionalVerticalPadding += glowSize / 2;
+    }
     // show image
-    image(images[i], coords[0] - (radius / 2), coords[1] - (radius / 2), radius, radius);
+    image(images[i], centers_x[i] - (radius / 2), centers_y[i] - (radius / 2), radius, radius);
 
     // show text
     textAlign(CENTER);
     textFont(labelFont);
+    fill(white);
     text(data[i]["name"],
-        coords[0] - (maxRadius / 2) - horizontalLabelPadding, // x
-        coords[1] + (maxRadius / 2) + verticalLabelPadding, // y
+        centers_x[i] - (maxRadius / 2) - horizontalLabelPadding, // x
+        centers_y[i] + (maxRadius / 2) + verticalLabelPadding + additionalVerticalPadding, // y
         maxRadius + 2 * horizontalLabelPadding,  maxRadius, 1);
+
+}
+
+void mousePressed() {
+    // check if inside of any circle
+    for (int i = 0; i < numPoints; i++) {
+        if (pow(mouseX - centers_x[i], 2) + pow(mouseY - centers_y[i], 2) <= pow(maxRadius, 2)) {
+            selectedIndex = i;
+            break;
+        }
+    }
 }
