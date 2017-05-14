@@ -108,7 +108,7 @@ void drawPoint(int i, float radius) {
             stroke(yellow, 255.0 * (1 - j / glowRadius));
             ellipse(centers_x[i], centers_y[i], j, j);
         }
-        additionalVerticalPadding += glowSize / 2;
+        additionalVerticalPadding += currentGlowSize / 2;
     }
     // show image
     image(images[i], centers_x[i] - (radius / 2), centers_y[i] - (radius / 2), radius, radius);
