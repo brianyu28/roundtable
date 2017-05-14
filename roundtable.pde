@@ -35,9 +35,9 @@ void renderDesktop() {
     
     float radius = circleSize + 2 * sin(frameCount / 8);
 
-    int count = 8;
-    for (int i = 0; i <= count; i++) {
-        float proportion = i / count;
+    int count = 10;
+    for (int i = 0; i < count; i++) {
+        float proportion = i / (count - 1);
         float[] coords = semicircleCoords(viewWidth, viewHeight, proportion);
         
         ellipse(coords[0], coords[1], radius, radius);

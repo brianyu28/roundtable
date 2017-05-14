@@ -18,14 +18,18 @@ float[] semicircleCoords(float width, float height, float proportion) {
     float leftmostX = circleSize;
     float leftmostY = (1/2) * height;
     float rightmostX = width - circleSize;
-
-    float semicircleRadius = dist(originX, originY, leftmostX, leftmostY);
     
-    // compute desired x value
-    float x = (proportion * (rightmostX - leftmostX)) + leftmostX;
+    // angle and distance from origin to leftmost and rightmost angles
+    float leftAngle = atan((originY - leftmostY) / (originX - leftmostX));
+    float rightAngle = PI - leftAngle;
+    float semicircleRadius = dist(originX, originY, leftmostX, leftmostY);
 
-    // y = sqrt(r^2 - (x - x1)^2) + y1
-    float y = -sqrt(pow(semicircleRadius, 2) - pow(x - originX, 2)) + originY;
+    // compute desired angle
+    float desiredAngle = (proportion * (rightAngle - leftAngle)) + leftAngle;
 
+    // compute desired x and y values
+    float x = originX - semicircleRadius * cos(desiredAngle);
+    float y = originY - semicircleRadius * sin(desiredAngle);
+    
     return [x, y];
 }
