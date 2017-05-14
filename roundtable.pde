@@ -93,13 +93,16 @@ void renderMobile() {
     background(bgColor);
 }
 
+int currentGlowSize = 0;
 void drawPoint(int i, float radius) {
     
     int additionalVerticalPadding = 0;
 
     // show glow
     if (i == selectedIndex) {
-        float glowRadius = radius + glowSize;
+        if (currentGlowSize < glowSize)
+            currentGlowSize += 2;
+        float glowRadius = radius + currentGlowSize;
         fill(yellow, 0);
         for (int j = 0; j < glowRadius; j++) {
             stroke(yellow, 255.0 * (1 - j / glowRadius));
@@ -125,13 +128,18 @@ void mousePressed() {
     // check if inside of any circle
     for (int i = 0; i < numPoints; i++) {
         if (pow(mouseX - centers_x[i], 2) + pow(mouseY - centers_y[i], 2) <= pow(maxRadius, 2)) {
-            selectedIndex = i;
-            break;
+            if (selectedIndex != i) {
+                currentGlowSize = 0;
+                selectedIndex = i;
+                break;
+            }
         }
     }
 }
 
 void showTitle() {
+
+    // show main headline
     textAlign(CENTER);
     int headlineFontSize = boundBy(11 + (viewWidth / 40.0), 11, 36);
     textFont(headlineFont, headlineFontSize);
@@ -140,6 +148,15 @@ void showTitle() {
         detailY + 0.3 * detailHeight,
         detailWidth - 2 * detailHeadPadding,
         0.7 * detailHeight, 1);
+
+    // show instructions
+    textAlign(CENTER);
+    textFont(descriptionFont);
+    text(instructions,
+        detailX + detailHeadPadding,
+        detailY + 0.7 * detailHeight,
+        detailWidth - 2 * detailHeadPadding,
+        0.3 * detailHeight, 1);
 }
 
 void showDetail() {
@@ -169,7 +186,6 @@ void showDetail() {
     image(images[selectedIndex], imgX, imgY, imgWidth, imgHeight);
 
     // show description
-
     String description = data[selectedIndex]["description"];
     textAlign(LEFT);
     textFont(descriptionFont);

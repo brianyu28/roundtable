@@ -38,3 +38,6 @@ int glowSize = 40;
 
 int detailHeadPadding = 30;
 int detailHeadHeight = 90;
+
+// strings
+String instructions = "Click on a person above to see details.";
