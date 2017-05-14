@@ -9,51 +9,27 @@
 
 var data = [
     {
-        "name": "Adams House",
-        "image": "adams.png"
+        "name": "Martha Minow",
+        "image": "minow.png"
     },
     {
-        "name": "Cabot House",
-        "image": "cabot.png"
+        "name": "Alan M. Garber",
+        "image": "garber.png"
     },
     {
-        "name": "Currier House",
-        "image": "currier.png"
+        "name": "Drew G. Faust",
+        "image": "faust.png"
     },
     {
-        "name": "Dunster House",
-        "image": "dunster.png"
+        "name": "Rakesh Khurana",
+        "image": "khurana.png"
     },
     {
-        "name": "Eliot House",
-        "image": "eliot.png"
+        "name": "Michael D. Smith",
+        "image": "smith.png"
     },
     {
-        "name": "Kirkland House",
-        "image": "kirkland.png"
-    },
-    {
-        "name": "Leverett House",
-        "image": "leverett.png"
-    },
-    {
-        "name": "Lowell House",
-        "image": "lowell.png"
-    },
-    {
-        "name": "Mather House",
-        "image": "mather.png"
-    },
-    {
-        "name": "Pforzheimer House",
-        "image": "pforzheimer.png"
-    },
-    {
-        "name": "Quincy House",
-        "image": "quincy.png"
-    },
-    {
-        "name": "Winthrop House",
-        "image": "winthrop.png"
-    },
+        "name": "Francis J. Doyle",
+        "image": "doyle.png"
+    }
 ];
