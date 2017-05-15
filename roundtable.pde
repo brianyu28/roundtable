@@ -172,9 +172,9 @@ void showDetail() {
         1);
 
     // show person's image
-    float imgX = detailX + detailHeadPadding;
+    float imgX = detailX + detailHeadPadding + 0.15 * detailWidth;
     float imgY = detailY + boundBy(23 + (viewWidth / 15), 40, 90);
-    float imgWidth = 0.3 * detailWidth;
+    float imgWidth = 0.2 * detailWidth;
     float imgHeight = imgWidth;
     image(images[selectedIndex], imgX, imgY, imgWidth, imgHeight);
 
@@ -184,7 +184,7 @@ void showDetail() {
     textFont(descriptionFont);
     fill(textColor);
     text(description,
-        imgX + 0.4 * detailWidth,
+        imgX + 0.23 * detailWidth,
         imgY,
         0.5 * detailWidth,
         imgHeight, 1);

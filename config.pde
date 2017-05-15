@@ -7,7 +7,7 @@
  *
  */
 
-String roundtableTitle = "Meet Harvard's Leadership";
+String roundtableTitle = "Meet Harvard's Houses";
 
 var data = [
     {
@@ -40,4 +40,68 @@ var data = [
         "image": "doyle.png",
         "description": "Francis Doyle is the Dean of the School of Engineering and Applied Sciences.\n\nDoyle was named SEAS Dean in May 2015, and formerly was a professor of chemical engineering at the University of California, Santa Barbara."
     }
+];
+
+
+var data = [
+    {
+        "name": "Adams House",
+        "image": "adams.png",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non ligula non massa tristique suscipit. Proin tempor ante quis pulvinar hendrerit."
+    },
+    {
+        "name": "Cabot House",
+        "image": "cabot.png",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non ligula non massa tristique suscipit. Proin tempor ante quis pulvinar hendrerit."
+    },
+    {
+        "name": "Currier House",
+        "image": "currier.png",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non ligula non massa tristique suscipit. Proin tempor ante quis pulvinar hendrerit."
+    },
+    {
+        "name": "Dunster House",
+        "image": "dunster.png",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non ligula non massa tristique suscipit. Proin tempor ante quis pulvinar hendrerit."
+    },
+    {
+        "name": "Eliot House",
+        "image": "eliot.png",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non ligula non massa tristique suscipit. Proin tempor ante quis pulvinar hendrerit."
+    },
+    {
+        "name": "Kirkland House",
+        "image": "kirkland.png",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non ligula non massa tristique suscipit. Proin tempor ante quis pulvinar hendrerit."
+    },
+    {
+        "name": "Leverett House",
+        "image": "leverett.png",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non ligula non massa tristique suscipit. Proin tempor ante quis pulvinar hendrerit."
+    },
+    {
+        "name": "Lowell House",
+        "image": "lowell.png",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non ligula non massa tristique suscipit. Proin tempor ante quis pulvinar hendrerit."
+    },
+    {
+        "name": "Mather House",
+        "image": "mather.png",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non ligula non massa tristique suscipit. Proin tempor ante quis pulvinar hendrerit."
+    },
+    {
+        "name": "Pforzheimer House",
+        "image": "pforzheimer.png",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non ligula non massa tristique suscipit. Proin tempor ante quis pulvinar hendrerit."
+    },
+    {
+        "name": "Quincy House",
+        "image": "quincy.png",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non ligula non massa tristique suscipit. Proin tempor ante quis pulvinar hendrerit."
+    },
+    {
+        "name": "Winthrop House",
+        "image": "winthrop.png",
+	"description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur non ligula non massa tristique suscipit. Proin tempor ante quis pulvinar hendrerit."
+    },
 ];

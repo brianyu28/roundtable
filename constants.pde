@@ -20,9 +20,9 @@ color white = color(255, 255, 255);
 color black = color(0, 0, 0);
 
 // fonts
-PFont labelFont = createFont("fonts/Merriweather-Regular.ttf", 10);
+PFont labelFont = createFont("fonts/Merriweather-Regular.ttf", 12);
 PFont headlineFont = createFont("fonts/Merriweather-Regular.ttf", 24);
-PFont descriptionFont = createFont("fonts/Merriweather-Regular.ttf", 11);
+PFont descriptionFont = createFont("fonts/Merriweather-Regular.ttf", 14);
 
 // color assignments
 color bgColor = white;
@@ -30,7 +30,7 @@ color textColor = black;
 color glowColor = yellow;
 
 // size constants
-int enforcedWidth = 600;
+int enforcedWidth = 1400;
 int maxWidth = 1000;
 int mobileThreshold = 450;
 float aspectRatio = 5/3;
