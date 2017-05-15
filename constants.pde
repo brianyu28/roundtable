@@ -19,9 +19,9 @@ color yellow = color(219, 211, 0);
 color white = color(255, 255, 255);
 
 // fonts
-PFont labelFont = createFont("fonts/Merriweather-Regular.ttf", 12);
-PFont headlineFont = createFont("fonts/Merriweather-Regular.ttf", 36);
-PFont descriptionFont = createFont("fonts/Merriweather-Regular.ttf", 16);
+PFont labelFont = createFont("fonts/Merriweather-Regular.ttf", 10);
+PFont headlineFont = createFont("fonts/Merriweather-Regular.ttf", 24);
+PFont descriptionFont = createFont("fonts/Merriweather-Regular.ttf", 11);
 
 // color assignments
 color bgColor = crimson;

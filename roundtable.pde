@@ -42,6 +42,9 @@ void updateSize() {
     if (curWidth == viewWidth) {
         return;
     }
+    
+    // strictly enforce width: get rid of this line for flexibility
+    curWidth = 600;
 
     viewWidth = curWidth;
     viewHeight = viewWidth / aspectRatio;
