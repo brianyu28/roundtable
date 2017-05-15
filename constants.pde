@@ -30,6 +30,7 @@ color textColor = black;
 color glowColor = yellow;
 
 // size constants
+int enforcedWidth = 600;
 int maxWidth = 1000;
 int mobileThreshold = 450;
 float aspectRatio = 5/3;

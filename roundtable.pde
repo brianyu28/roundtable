@@ -44,7 +44,7 @@ void updateSize() {
     }
     
     // strictly enforce width: get rid of this line for flexibility
-    curWidth = 600;
+    curWidth = enforcedWidth;
 
     viewWidth = curWidth;
     viewHeight = viewWidth / aspectRatio;
@@ -69,15 +69,10 @@ void updateSize() {
 
 void draw() {
     updateSize();
-
-    // determine whether to render as desktop or mobile
-    if (viewWidth <= mobileThreshold)
-        renderMobile();
-    else
-        renderDesktop();
+    renderCanvas();
 }
 
-void renderDesktop() {
+void renderCanvas() {
     size(viewWidth, viewHeight);
     background(bgColor);
     stroke(255, 255, 255);
@@ -89,11 +84,6 @@ void renderDesktop() {
     }
 
     showDetail();
-}
-
-void renderMobile() {
-    size(viewWidth, viewHeight);
-    background(bgColor);
 }
 
 int currentGlowSize = 0;
