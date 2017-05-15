@@ -23,3 +23,22 @@ Roundtable can be embedded as an iframe using the syntax:
 ```
 <iframe style="overflow:hidden;" scrolling="no" width="600" height="360" src="URL_HERE"></iframe>
 ```
+
+### Sizing and Coloring
+
+Sizing and coloring constraints are defined in `constants.pde`.
+The standard constraints include:
+
+- `bgColor: white`
+- `textColor: black`
+- `enforcedWidth: 600`
+- `labelFont:` size `10`
+- `descriptionFont:` size `11`
+
+For an alternative larger-feature layout, you may also wish to change these to:
+
+- `bgColor: crimson`
+- `textColor: white`
+- `enforcedWidth: 1000`
+- `labelFont:` size `12`
+- `descriptionFont:` size `14`
