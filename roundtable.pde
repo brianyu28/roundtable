@@ -106,9 +106,9 @@ void drawPoint(int i, float radius) {
         if (currentGlowSize < glowSize)
             currentGlowSize += 2;
         float glowRadius = radius + currentGlowSize;
-        fill(yellow, 0);
+        fill(glowColor, 0);
         for (int j = 0; j < glowRadius; j++) {
-            stroke(yellow, 255.0 * (1 - j / glowRadius));
+            stroke(glowColor, 255.0 * (1 - j / glowRadius));
             ellipse(centers_x[i], centers_y[i], j, j);
         }
         additionalVerticalPadding += currentGlowSize / 2;
@@ -119,7 +119,7 @@ void drawPoint(int i, float radius) {
     // show text
     textAlign(CENTER);
     textFont(labelFont);
-    fill(white);
+    fill(textColor);
     text(data[i]["name"],
         centers_x[i] - (maxRadius / 2) - horizontalLabelPadding, // x
         centers_y[i] + (maxRadius / 2) + verticalLabelPadding + additionalVerticalPadding, // y
@@ -174,7 +174,7 @@ void showDetail() {
     String name = data[selectedIndex]["name"];
     textAlign(CENTER);
     textFont(headlineFont, headlineFontSize);
-    fill(white);
+    fill(textColor);
     text(name, detailX,
         detailY + detailHeadPadding,
         detailWidth,
@@ -192,7 +192,7 @@ void showDetail() {
     String description = data[selectedIndex]["description"];
     textAlign(LEFT);
     textFont(descriptionFont);
-    fill(white);
+    fill(textColor);
     text(description,
         imgX + 0.4 * detailWidth,
         imgY,

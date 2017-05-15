@@ -17,6 +17,7 @@ color blue3 = color(176, 207, 231);
 color green = color(41, 136, 72);
 color yellow = color(219, 211, 0);
 color white = color(255, 255, 255);
+color black = color(0, 0, 0);
 
 // fonts
 PFont labelFont = createFont("fonts/Merriweather-Regular.ttf", 10);
@@ -24,7 +25,9 @@ PFont headlineFont = createFont("fonts/Merriweather-Regular.ttf", 24);
 PFont descriptionFont = createFont("fonts/Merriweather-Regular.ttf", 11);
 
 // color assignments
-color bgColor = crimson;
+color bgColor = white;
+color textColor = black;
+color glowColor = yellow;
 
 // size constants
 int maxWidth = 1000;
