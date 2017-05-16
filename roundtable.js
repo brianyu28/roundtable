@@ -66,7 +66,7 @@ function render(svg) {
         .style('fill', bgColor);
 
     for (var i = 0; i < numPoints; i++) {
-        radius = circleSize; // TODO pulsating
+        radius = circleSize; 
         var point = drawPoint(svg, i, radius);
         points.push(point);
     }
@@ -74,10 +74,6 @@ function render(svg) {
 
 function drawPoint(svg, i, radius) {
     var additionalVerticalPadding = 0;
-
-    if (i == selectedIndex) {
-        // TODO: show glow
-    }
 
     var point = svg.append('image')
         .attr('xlink:href', 'img/' + data[i]['image'])
